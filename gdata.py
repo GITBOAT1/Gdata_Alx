@@ -1,26 +1,27 @@
 #!/usr/bin/python3
-from tkinter import *
-from win_help import center_window, about, bt1
-from view1 import * 
+from modles.win_help import center_window, about, bt1
+import modles.view1
 import tkinter as tk
+#from tkinter import *
 """ The user interface """
 
 
-window = Tk()
+window = tk.Tk()
 center_window(window, 600, 299)
 window.title("Garage Data")
-menubar = Menu(window)
-filemenu =Menu(menubar, tearoff=0)
+menubar = tk.Menu(window)
+filemenu = tk.Menu(menubar, tearoff=0)
 filemenu.add_command(label = "New")
 filemenu.add_separator()
 filemenu.add_command(label="Exit",command=window.quit)
 menubar.add_cascade(label="Menu",menu =filemenu)
-helpmenu = Menu(menubar,tearoff=0)
+helpmenu = tk.Menu(menubar,tearoff=0)
 helpmenu.add_command(label = "About",command = about)
 menubar.add_cascade(label="Help",menu =helpmenu)
 window.config(menu=menubar)
 buttomw = 12
-
+defaultwin = "windows"
+txtvar = tk.StringVar()
 
 """ containers """
 container = tk.Frame()
@@ -36,6 +37,9 @@ bt1(container1, name="b4",title="Completed Jobs",row=4, column=10,command = lamb
 #bt1(container1, name="b5",title="Add Jobs",row=5, column=10,command=job_card)
 #bt1(container1, name="b6",title="Add New Tech",row=6, column=10, command=Tech)
 #bt1(container1, name="b7",title="Exit",row=7, column=10, command=window.quit)
+
+
+
 
 
 """ main() """
